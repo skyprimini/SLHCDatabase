@@ -1,0 +1,79 @@
+﻿@page "/volunteer"
+@inject DogAdoptionWebsite.Data.DogAdoptionWebsiteContext DbContext
+
+
+<h3>Volunteer with Us</h3>
+
+<p>We are always looking for passionate volunteers to help support our dogs and make a difference! If you're interested in volunteering, please fill out the form below.</p>
+
+<EditForm Model="volunteerInfo" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label for="name">Full Name</label>
+        <InputText id="name" class="form-control" @bind-Value="volunteerInfo.Name" />
+        <ValidationMessage For="@(() => volunteerInfo.Name)" />
+    </div>
+
+    <div class="form-group">
+        <label for="email">Email Address</label>
+        <InputEmail id="email" class="form-control" @bind=" volunteerInfo.Email" />
+        <ValidationMessage For="@(() => volunteerInfo.Email)" />
+    </div>
+
+    <div class="form-group">
+        <label for="availability">Availability</label>
+        <InputText id="availability" class="form-control" @bind-Value="volunteerInfo.Availability" />
+        <ValidationMessage For="@(() => volunteerInfo.Availability)" />
+    </div>
+
+    <div class="form-group">
+        <label for="skills">Skills or Experience</label>
+        <InputTextArea id="skills" class="form-control" @bind-Value="volunteerInfo.Skills" />
+        <ValidationMessage For="@(() => volunteerInfo.Skills)" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</EditForm>
+
+@if (formSubmitted)
+{
+    <div class="alert alert-success mt-3">
+        Thank you for your interest in volunteering! We will be in touch soon.
+    </div>
+}
+
+
+
+@code {
+   private VolunteerInfo volunteerInfo = new VolunteerInfo();
+   private bool formSubmitted = false;
+
+    private async Task HandleSubmit()
+    {
+        var volunteer = new Volunteer
+            {
+                /*
+                Name = volunteerInfo.Name,
+                Email = volunteerInfo.Email,
+                Availability = volunteerInfo.Availability,
+                Skills = volunteerInfo.Skills*/
+            };
+
+        //DbContext.Volunteers.Add(volunteer);
+        await DbContext.SaveChangesAsync();
+        formSubmitted = true;
+    }
+
+    public class VolunteerInfo
+    {
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Availability { get; set; }
+        public string Skills { get; set; }
+   
+    }
+   
+
+}

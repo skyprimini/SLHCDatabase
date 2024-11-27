@@ -1,0 +1,118 @@
+﻿@layout DogAdoptionWebsite.Components.Layout.MainLayout
+@page "/adoption"
+<!--inject--> <!-- DogAdoptionWebsite.Data.DogAdoptionWebsiteContext DbContext -->
+
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using DogAdoptionWebsite.Models
+@using DogAdoptionWebsite.Data
+@implements IAsyncDisposable
+@inject IDbContextFactory<DogAdoptionWebsiteContext> DbFactory
+
+<PageTitle>Available Dogs for Adoption</PageTitle>
+
+<h1>Dogs Available for Adoption</h1>
+
+<QuickGrid Class="table" Items="dogs.AsQueryable()">
+    <PropertyColumn Property="dog => dog.Name" Title="Name" />
+    <PropertyColumn Property="dog => dog.Breed" Title="Breed" />
+    <PropertyColumn Property="dog => dog.Age" Title="Age" />
+    <PropertyColumn Property="dog => dog.Location" Title="Location" />
+    <PropertyColumn Property="dog => dog.Status" Title="Status" />
+</QuickGrid>
+
+@code {
+    // Create a struct for dog information
+    struct DogInfo
+    {
+        // Image URL of the dog (for displaying on the Adoption page)
+        <!-- Add this to list-->
+        public string ImageUrl { get; set; }
+        public string Name { get; set; }
+        public string Breed { get; set; }
+       <!-- Add this to list--> public string Gender { get; set; }
+        public int Age { get; set; }
+       <!-- Add this to list--> public string Weight { get; set; }
+       <!-- Add this to list--> public string Description { get; set; }
+        public string Location { get; set; }
+        public string Status { get; set; }
+
+    }
+
+    private DogAdoptionWebsiteContext context = default!;
+    private List<DogInfo> dogs; // List to store the dog data
+
+    protected override void OnInitialized()
+    {
+        dogs = new List<DogInfo>();
+        context = DbFactory.CreateDbContext();
+
+        // LINQ query to fetch data from the Dog table
+        var result = from dog in context.Dog
+                     select new
+                     {
+                         dog.Name,
+                         dog.Breed,
+                         dog.Age,
+                         dog.Location,
+                         dog.Status
+                     };
+
+        // Map the result to the DogInfo list
+        foreach (var item in result)
+        {
+            DogInfo tempDog = new DogInfo
+                {
+                    Name = item.Name,
+                    Breed = item.Breed,
+                    Age = item.Age,
+                    Location = item.Location,
+                    Status = item.Status
+                };
+
+            dogs.Add(tempDog);
+        }
+    }
+
+    public async ValueTask DisposeAsync() => await context.DisposeAsync();
+}
+-->
+
+
+
+<h3>Available Dogs for Adoption</h3>
+
+
+<!--
+<div class="row">
+      
+     <!--@foreach (var dog in dogs)-->
+    {
+    <!--
+        <div class="col-md-4">
+            <div class="card">
+                <img src="@dog.ImageUrl" class="card-img-top" alt="Dog Image">
+                <div class="card-body">
+                    <h5 class="card-title">@dog.Name</h5>
+                    <p class="card-text">@dog.Description</p>
+                    <p><strong>Breed:</strong> @dog.Breed</p>
+                    <p><strong>Location:</strong> @dog.Location</p>
+                    <p><strong>Status:</strong> @dog.Status</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private List<Dog> dogs { get; set; } = default!;
+
+    protected override async Task OnInitializedAsync()
+    {
+    // Fetch the dogs from the database
+     dogs = await DbContext.Dog.ToListAsync();
+    }
+  }
+
+  -->
+}
