@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\syann\\OneDrive\\Desktop\\DogAdoptionWebsite\\DogAdoptionWebsite\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\DogAdoptionWebsite.bundle.scp.css",
+      "PackagePath": "staticwebassets\\DogAdoptionWebsite.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\syann\\OneDrive\\Desktop\\DogAdoptionWebsite\\DogAdoptionWebsite\\wwwroot\\Images\\1.jpg",
+      "PackagePath": "staticwebassets\\Images\\1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\syann\\OneDrive\\Desktop\\DogAdoptionWebsite\\DogAdoptionWebsite\\wwwroot\\Images\\2.png",
+      "PackagePath": "staticwebassets\\Images\\2.png"
+    },
+    {
+      "Id": "C:\\Users\\syann\\OneDrive\\Desktop\\DogAdoptionWebsite\\DogAdoptionWebsite\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\syann\\OneDrive\\Desktop\\DogAdoptionWebsite\\DogAdoptionWebsite\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\syann\\OneDrive\\Desktop\\DogAdoptionWebsite\\DogAdoptionWebsite\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\syann\\OneDrive\\Desktop\\DogAdoptionWebsite\\DogAdoptionWebsite\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.DogAdoptionWebsite.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.DogAdoptionWebsite.props",
+      "PackagePath": "build\\DogAdoptionWebsite.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.DogAdoptionWebsite.props",
+      "PackagePath": "buildMultiTargeting\\DogAdoptionWebsite.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.DogAdoptionWebsite.props",
+      "PackagePath": "buildTransitive\\DogAdoptionWebsite.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
