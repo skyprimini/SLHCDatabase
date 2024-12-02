@@ -18,7 +18,7 @@
 
     <div class="form-group">
         <label for="email">Email Address</label>
-        <InputEmail id="email" class="form-control" @bind=" volunteerInfo.Email" />
+        <input type="email" id="email" class="form-control custom-width" style="width: 100%;" @bind="volunteerInfo.Email" />
         <ValidationMessage For="@(() => volunteerInfo.Email)" />
     </div>
 

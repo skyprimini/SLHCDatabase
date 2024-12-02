@@ -1,46 +1,105 @@
 ﻿@inherits LayoutComponentBase
+<PageTitle>Pawsitively Rescued</PageTitle>
 
-<div class="main-container">
-    <header>
-        <!-- Horizontal navigation bar -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">Dog Adoption</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/adoption">Adoption</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/donation">Donation</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/volunteer">Volunteer</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/contact">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
+<style>
+    /* Header Styling */
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #f4e4c1; /* Pale pastel yellow */
+        padding: 20px;
+        border-bottom: 3px solid #b5651d; /* Brick color accent */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
 
-    <main>
-        @Body  <!-- This renders the current page content -->
-    </main>
+    .title {
+        font-size: 48px;
+        color: #b5651d; /* Brick color */
+        font-family: 'Georgia', serif;
+        font-weight: bold;
+        text-align: center;
+        flex-grow: 1;
+        cursor: pointer;
+        letter-spacing: 2px;
+    }
+
+        .title a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .title:hover {
+            text-shadow: 3px 3px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+        }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+        .search-container input[type="search"] {
+            padding: 8px;
+            border: 2px solid #6b8e23; /* Olive */
+            border-radius: 5px;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .search-container input[type="submit"] {
+            background-color: #b5651d; /* Brick */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .search-container input[type="submit"]:hover {
+                background-color: #8b4513; /* Darker brick for hover */
+            }
+
+    .nav-links a {
+        font-size: 16px;
+        color: #333;
+        background-color: #f4e4c1; /* Match header background */
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+        .nav-links a:hover {
+            background-color: #b5651d; /* Brick */
+            color: white;
+        }
+</style>
+
+<!-- Header -->
+<div class="header">
+    <!-- Title with Home Link -->
+    <div class="title">
+        <a href="/">Pawsitively Rescued</a>
+    </div>
+
+    <!-- Search Bar and Links -->
+    <div class="search-container">
+        <form action="/search" method="get">
+            <input type="search" name="query" placeholder="Search..." />
+            <input type="submit" value="Search" />
+        </form>
+        <div class="nav-links">
+            <a href="/Register">Register</a>
+            <a href="/Login">Login</a>
+        </div>
+    </div>
 </div>
-
-
-<div id="blazor-error-ui">
-    An unhandled error has occurred.
-    <a href="" class="reload">Reload</a>
-    <a class="dismiss">🗙</a>
-</div>
-
+<!-- Body Section -->
+<main>
+    @Body
+</main>
+<!-- Footer -->
+<div class="footer">
+    &copy; 2024 Pawsitively Rescued. All rights reserved. | <a href="/privacy">Privacy Policy</a>
+<!----></div>

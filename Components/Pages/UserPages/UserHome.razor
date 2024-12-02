@@ -1,0 +1,68 @@
+﻿@page "/userdash"
+
+
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using DogAdoptionWebsite.Models
+@using DogAdoptionWebsite.Data
+@implements IAsyncDisposable
+@inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
+
+<PageTitle>Account Home</PageTitle>
+
+<h1>Welcome to you dashboard</h1>
+
+
+<QuickGrid Class="table" Items="myList.AsQueryable()">
+    <PropertyColumn Property="User => User.UserFirstName" />
+    <PropertyColumn Property="User => User.UserLastName" />
+    <PropertyColumn Property="User => User.UserEmail" />
+
+</QuickGrid>
+
+@code {
+
+    //Create MyEmployee struct, to work with a new object/record
+
+    struct MyUser
+    {
+        public string UserFirstName { get; set; }
+        public string UserLastName { get; set; }
+        public string UserEmail { get; set; }
+
+    }
+    private DogAdoptionWebsiteContext context = default!;
+
+    private List<MyUser> myList;  //List of MyEmployee objects
+
+    protected override void OnInitialized()
+    {
+        myList = new List<MyUser>();
+
+        context = DbFactory.CreateDbContext();
+
+        //LINQ query for 3 tables
+
+        var result = from item in context.User
+                     from item2 in context.Dog
+                     where item.Id == item2.Id
+                     select new { item.FirstName, item.LastName, item.Email, item2.Id, item2.Name };
+
+
+        //Create a new MyEmployee, assign data from the result object to the //tempEmployee object. Add MyEmployee object to myList.
+
+        foreach (var x in result)
+        {
+            MyUser tempUser = new MyUser();
+
+            tempUser.UserFirstName = x.FirstName;
+            tempUser.UserLastName = x.LastName;
+            tempUser.UserEmail = x.Email;
+
+
+            myList.Add(tempUser);
+        }
+    }
+
+    public async ValueTask DisposeAsync() => await context.DisposeAsync();
+}

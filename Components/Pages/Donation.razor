@@ -1,8 +1,69 @@
 ﻿@layout DogAdoptionWebsite.Components.Layout.MainLayout
 @page "/donation"
 
-<h3>Donate to Support Our Cause</h3>
-<p>Your generous donations help provide food, shelter, 
-    and medical care for dogs in need.</p>
-<p><a href="https://www.paypal.com/donate" target="_blank">Donate Now</a></p>
+<style>
+    body {
+        background-color: #FFF9E3; /* Pale pastel yellow */
+        color: #333333; /* Dark gray for text */
+    }
 
+    h3 {
+        color: #C1440E; /* Brick color */
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: #333333;
+        line-height: 1.6;
+    }
+
+    a {
+        color: #C1440E;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        a:hover {
+            color: #F1360B; /* orange */
+        }
+
+    .donate-container {
+        background-color: #FFF4DB; 
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+        .donate-container p:last-of-type {
+            margin-top: 20px;
+        }
+
+    .donate-link {
+        background-color: #C1440E; /* Brick button */
+        color: #FFF9E3; /* Light text for contrast */
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+        .donate-link:hover {
+            background-color: #A1360B; /* Slightly darker brick */
+        }
+</style>
+
+<div class="donate-container">
+    <h3>Donate to Support Our Cause</h3>
+    <p>Your generous donations help provide food, shelter, and medical care for dogs in need.</p>
+    <p>
+        <a class="donate-link" href="https://www.paypal.com/donate" target="_blank">
+            Donate Now
+        </a>
+    </p>
+</div>

@@ -15,6 +15,7 @@ namespace DogAdoptionWebsite.Data
         }
 
         public DbSet<DogAdoptionWebsite.Models.Dog> Dog { get; set; } = default!;
+        public DbSet<DogAdoptionWebsite.Models.User> User { get; set; } = default!;
         
 
     }

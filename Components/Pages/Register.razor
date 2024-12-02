@@ -1,0 +1,229 @@
+﻿@page "/Register"
+@using System.ComponentModel.DataAnnotations
+@inject NavigationManager NavigationManager
+@layout DogAdoptionWebsite.Components.Layout.MainLayout
+
+<PageTitle>Register</PageTitle>
+
+<style>
+    /* Page Header Styling */
+    h1 {
+        font-size: 32px;
+        text-align: center;
+        color: #b5651d; /* Brick color */
+        font-family: 'Georgia', serif;
+        margin-top: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Register Form Container */
+    .register-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        background-color: #fdf6e3; /* Pastel yellow background */
+        padding: 20px;
+    }
+
+    /* Form Styling */
+    .register-form {
+        width: 100%;
+        max-width: 500px;
+        background-color: #ffffff;
+        border: 2px solid #6b8e23; /* Olive border */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    .form-floating {
+        margin-bottom: 20px;
+    }
+
+        .form-floating label {
+            color: #333333; /* Dark gray text */
+        }
+
+    .form-control, .form-select {
+        border: 1px solid #6b8e23; /* Olive border */
+        border-radius: 5px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #b5651d; /* Brick color focus */
+            box-shadow: 0 0 5px rgba(181, 101, 29, 0.5);
+        }
+
+    .btn-primary {
+        background-color: #b5651d; /* Brick color */
+        border-color: #b5651d;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+        .btn-primary:hover {
+            background-color: #6b8e23; /* Olive hover */
+            border-color: #6b8e23;
+        }
+
+    .text-danger {
+        font-size: 14px;
+        color: #ff4d4f; /* Highlighted red for validation errors */
+    }
+</style>
+
+<div class="register-container">
+    <div class="register-form">
+        <h1>Register</h1>
+        <EditForm Model="Input" OnValidSubmit="RegisterUser">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+            <div class="form-floating">
+                <InputText @bind-Value="Input.FirstName" class="form-control" placeholder="First Name" />
+                <label>First Name</label>
+                <ValidationMessage For="() => Input.FirstName" class="text-danger" />
+            </div>
+            <div class="form-floating">
+                <InputText @bind-Value="Input.LastName" class="form-control" placeholder="Last Name" />
+                <label>Last Name</label>
+                <ValidationMessage For="() => Input.LastName" class="text-danger" />
+            </div>
+            <div class="form-floating">
+                <InputText @bind-Value="Input.Email" class="form-control" placeholder="Email" />
+                <label>Email</label>
+                <ValidationMessage For="() => Input.Email" class="text-danger" />
+            </div>
+            <div class="form-floating">
+                <InputText type="password" @bind-Value="Input.Password" class="form-control" placeholder="Password" />
+                <label>Password</label>
+                <ValidationMessage For="() => Input.Password" class="text-danger" />
+            </div>
+            <div class="form-floating">
+                <InputSelect class="form-select" @bind-Value="Input.Role">
+                    <option value="">Select Role</option>
+                    <option value="Admin">Admin</option>
+                    <option value="DefaultUser">User</option>
+                </InputSelect>
+                <label>Role</label>
+                <ValidationMessage For="() => Input.Role" class="text-danger" />
+            </div>
+            <div class="form-floating">
+                <InputSelect class="form-select" @bind-Value="Input.Age">
+                    <option value="">Select Age Group</option>
+                    <option value="eighteenplus">Over 18 years old</option>
+                    <option value="undereighteen">Under 18 years old</option>
+                </InputSelect>
+                <label>Age</label>
+                <ValidationMessage For="() => Input.Age" class="text-danger" />
+            </div>
+
+            <div class="form-floating">
+                <InputSelect class="form-select" id="currentnumberofpets" @bind-Value="Input.NumberOfPets">
+                    <option value="">Indicate number of pets you currently own</option>
+                    <option value="lessthan1">Less than one</option>
+                    <option value="between">0-3</option>
+                    <option value="graterthan3">Greater than three</option>
+                </InputSelect>
+                <label>Current Number Of Pets</label>
+                <ValidationMessage For="() => Input.NumberOfPets" class="text-danger" />
+            </div>
+            <div class="form-floating">
+                <InputSelect class="form-select" id="employmentstatus" @bind-Value="Input.EmploymentStatus">
+                    <option value="">Select Employment Status</option>
+                    <option value="employed">Employed</option>
+                    <option value="unemployed">Uemployed</option>
+                </InputSelect>
+                <label>Employment Status</label>
+                <ValidationMessage For="() => Input.EmploymentStatus" class="text-danger" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">Register</button>
+        </EditForm>
+    </div>
+</div>
+
+@code {
+    private async Task HandleSubmit(EditContext context)
+    {
+        Console.WriteLine("Form submitted");
+        RegisterUser();
+    }
+    private InputModel Input { get; set; } = new();
+    private string FeedbackMessage { get; set; } = string.Empty;
+
+    public void RegisterUser()
+    {
+        // Check all fields
+        if (string.IsNullOrWhiteSpace(Input.FirstName) ||
+            string.IsNullOrWhiteSpace(Input.LastName) ||
+            string.IsNullOrWhiteSpace(Input.Email) ||
+            string.IsNullOrWhiteSpace(Input.Password) ||
+            string.IsNullOrWhiteSpace(Input.Role) ||
+            string.IsNullOrWhiteSpace(Input.Age) ||
+            string.IsNullOrWhiteSpace(Input.NumberOfPets) ||
+            string.IsNullOrWhiteSpace(Input.EmploymentStatus))
+        {
+            FeedbackMessage = "Please fill in all fields.";
+            return;
+        }
+
+        // Validate conditions
+        if (Input.Age != "eighteenplus")
+        {
+            FeedbackMessage = "You must be over 18 years old to register.";
+            return;
+        }
+
+        if (Input.EmploymentStatus != "employed")
+        {
+            FeedbackMessage = "You must be employed to register.";
+            return;
+        }
+
+        if (Input.NumberOfPets == "graterthan3")
+        {
+            FeedbackMessage = "You cannot own more than 3 pets to register.";
+            return;
+        }
+
+        // If all conditions pass
+        FeedbackMessage = "Registration successful!";
+        // Redirect to login page
+        NavigationManager.NavigateTo("/login");
+    }
+
+    private sealed class InputModel
+    {
+        [Required(ErrorMessage = "First Name is required.")]
+        public string FirstName { get; set; } = "";
+
+        [Required(ErrorMessage = "Last Name is required.")]
+        public string LastName { get; set; } = "";
+
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Invalid email format.")]
+        public string Email { get; set; } = "";
+
+        [Required(ErrorMessage = "Password is required.")]
+        [DataType(DataType.Password)]
+        public string Password { get; set; } = "";
+
+        [Required(ErrorMessage = "Role is required.")]
+        public string Role { get; set; } = "";
+
+        [Required(ErrorMessage = "Age group is required.")]
+        public string Age { get; set; } = "";
+
+        [Required(ErrorMessage = "Number of pets is required.")]
+        public string NumberOfPets { get; set; } = "";
+
+        [Required(ErrorMessage = "Employment status is required.")]
+        public string EmploymentStatus { get; set; } = "";
+    }
+}

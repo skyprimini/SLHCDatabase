@@ -33,7 +33,7 @@ namespace DogAdoptionWebsite.Data
                     Location = "New York",
                     Status = "Available",
                     Description = "A friendly and playful dog",
-                    ImageUrl = "/images/dog1.jpg"
+                    ImageUrl = "/Images/doga.jpeg"
                 },
                 new Dog
                 {
@@ -44,7 +44,7 @@ namespace DogAdoptionWebsite.Data
                     Location = "California",
                     Status = "Adopted",
                     Description = "Loves to play and cuddle",
-                    ImageUrl = "/images/dog2.jpg"
+                    ImageUrl = "/Images/dogb.jpeg"
                 }
 
                 // Add more dogs...!!!!
