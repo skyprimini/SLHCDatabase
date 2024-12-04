@@ -1,0 +1,268 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/app.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2591"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/app.da95v2qkru.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\app.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"da95v2qkru"},{"Name":"integrity","Value":"sha256-u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE="},{"Name":"label","Value":"_content/DogAdoptionWebsite/app.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2591"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/bootstrap/bootstrap.min.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\bootstrap\bootstrap.min.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-eQJB6gyF/dN9owCDbES92PS3/XUvNIOUTMpxYYKnvfs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"346"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022eQJB6gyF/dN9owCDbES92PS3/XUvNIOUTMpxYYKnvfs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/bootstrap/bootstrap.min.css.8inm30yfxf.map">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\bootstrap\bootstrap.min.css.map'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"8inm30yfxf"},{"Name":"integrity","Value":"sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="},{"Name":"label","Value":"_content/DogAdoptionWebsite/bootstrap/bootstrap.min.css.map"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"449111"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/bootstrap/bootstrap.min.css.map">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\bootstrap\bootstrap.min.css.map'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"449111"},{"Name":"Content-Type","Value":"text/plain"},{"Name":"ETag","Value":"\u0022gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/bootstrap/bootstrap.min.pwyfsmvodq.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\bootstrap\bootstrap.min.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"pwyfsmvodq"},{"Name":"integrity","Value":"sha256-eQJB6gyF/dN9owCDbES92PS3/XUvNIOUTMpxYYKnvfs="},{"Name":"label","Value":"_content/DogAdoptionWebsite/bootstrap/bootstrap.min.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"346"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022eQJB6gyF/dN9owCDbES92PS3/XUvNIOUTMpxYYKnvfs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/DogAdoptionWebsite.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\DogAdoptionWebsite.qhvhitf3sv.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-rk\u002BDilXn74N1QeaE1Wzn8EvDuZoiC2rJDxachSCGhPQ="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6196"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022rk\u002BDilXn74N1QeaE1Wzn8EvDuZoiC2rJDxachSCGhPQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:33:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/DogAdoptionWebsite.qhvhitf3sv.bundle.scp.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\DogAdoptionWebsite.qhvhitf3sv.bundle.scp.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qhvhitf3sv"},{"Name":"integrity","Value":"sha256-rk\u002BDilXn74N1QeaE1Wzn8EvDuZoiC2rJDxachSCGhPQ="},{"Name":"label","Value":"_content/DogAdoptionWebsite/DogAdoptionWebsite.bundle.scp.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6196"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022rk\u002BDilXn74N1QeaE1Wzn8EvDuZoiC2rJDxachSCGhPQ=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:33:54 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/favicon.ifv42okdf2.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ifv42okdf2"},{"Name":"integrity","Value":"sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="},{"Name":"label","Value":"_content/DogAdoptionWebsite/favicon.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1148"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00224mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/favicon.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"1148"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00224mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/1.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\1.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-B3MeMT8eXUdn6TXW2i/oycAiB8Zch37PGG3LMn9w2gU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"28332"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022B3MeMT8eXUdn6TXW2i/oycAiB8Zch37PGG3LMn9w2gU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/1.r34x47y33m.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\1.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"r34x47y33m"},{"Name":"integrity","Value":"sha256-B3MeMT8eXUdn6TXW2i/oycAiB8Zch37PGG3LMn9w2gU="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/1.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"28332"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022B3MeMT8eXUdn6TXW2i/oycAiB8Zch37PGG3LMn9w2gU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/2.i96odqrqf9.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\2.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"i96odqrqf9"},{"Name":"integrity","Value":"sha256-SsUQqeU120Xc5iO5rik9gkIpquDILLbTQfGed7vbL3g="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/2.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"123005"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022SsUQqeU120Xc5iO5rik9gkIpquDILLbTQfGed7vbL3g=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/2.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\2.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-SsUQqeU120Xc5iO5rik9gkIpquDILLbTQfGed7vbL3g="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"123005"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022SsUQqeU120Xc5iO5rik9gkIpquDILLbTQfGed7vbL3g=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Doga.hchm8np3zd.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Doga.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"hchm8np3zd"},{"Name":"integrity","Value":"sha256-r\u002BqzgXd\u002B\u002BvbXby3QNsOpTUtunAu2Cd\u002BDHPlSmWbFx10="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Doga.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"92724"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022r\u002BqzgXd\u002B\u002BvbXby3QNsOpTUtunAu2Cd\u002BDHPlSmWbFx10=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Doga.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Doga.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-r\u002BqzgXd\u002B\u002BvbXby3QNsOpTUtunAu2Cd\u002BDHPlSmWbFx10="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"92724"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022r\u002BqzgXd\u002B\u002BvbXby3QNsOpTUtunAu2Cd\u002BDHPlSmWbFx10=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogb.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogb.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-FDlHgq7tbK7eWbk5MSAg6RkmcoVLUIU5hRNFNeK2kiE="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"238706"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022FDlHgq7tbK7eWbk5MSAg6RkmcoVLUIU5hRNFNeK2kiE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogb.ki11dfs2pk.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogb.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ki11dfs2pk"},{"Name":"integrity","Value":"sha256-FDlHgq7tbK7eWbk5MSAg6RkmcoVLUIU5hRNFNeK2kiE="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogb.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"238706"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022FDlHgq7tbK7eWbk5MSAg6RkmcoVLUIU5hRNFNeK2kiE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogc.4hbdp1hyw2.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogc.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4hbdp1hyw2"},{"Name":"integrity","Value":"sha256-qJcuc70xGLyHo1XPP71z6vDPaNBwB8O/MgRGXfcPUAs="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogc.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"196043"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022qJcuc70xGLyHo1XPP71z6vDPaNBwB8O/MgRGXfcPUAs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogc.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogc.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-qJcuc70xGLyHo1XPP71z6vDPaNBwB8O/MgRGXfcPUAs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"196043"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022qJcuc70xGLyHo1XPP71z6vDPaNBwB8O/MgRGXfcPUAs=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogd.dvx8838fdi.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogd.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"dvx8838fdi"},{"Name":"integrity","Value":"sha256-h27pCXzCR17dK0J3NcUB0J1oKVUVP9eAB5AU5wjhMQg="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogd.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"109558"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022h27pCXzCR17dK0J3NcUB0J1oKVUVP9eAB5AU5wjhMQg=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogd.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogd.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-h27pCXzCR17dK0J3NcUB0J1oKVUVP9eAB5AU5wjhMQg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"109558"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022h27pCXzCR17dK0J3NcUB0J1oKVUVP9eAB5AU5wjhMQg=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Doge.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Doge.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ZVYsdxx4LucOInHtB0/XpMk6CoJqJRd0DdJ\u002B8XKj988="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"192851"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ZVYsdxx4LucOInHtB0/XpMk6CoJqJRd0DdJ\u002B8XKj988=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Doge.lgl7in2rip.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Doge.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"lgl7in2rip"},{"Name":"integrity","Value":"sha256-ZVYsdxx4LucOInHtB0/XpMk6CoJqJRd0DdJ\u002B8XKj988="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Doge.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"192851"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ZVYsdxx4LucOInHtB0/XpMk6CoJqJRd0DdJ\u002B8XKj988=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogf.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogf.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-k16eLO2a4kC3Qsv10wRfxxWq2zeBDR1kfOatXEAMn00="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"213003"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022k16eLO2a4kC3Qsv10wRfxxWq2zeBDR1kfOatXEAMn00=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogf.tksb42ngjn.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogf.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"tksb42ngjn"},{"Name":"integrity","Value":"sha256-k16eLO2a4kC3Qsv10wRfxxWq2zeBDR1kfOatXEAMn00="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogf.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"213003"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022k16eLO2a4kC3Qsv10wRfxxWq2zeBDR1kfOatXEAMn00=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogg.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogg.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9u3IgUEmR/AgzyUXpTHT40q7fvt5OJxpBp81ivuzvmU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"117299"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229u3IgUEmR/AgzyUXpTHT40q7fvt5OJxpBp81ivuzvmU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogg.mwix0s6b00.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogg.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"mwix0s6b00"},{"Name":"integrity","Value":"sha256-9u3IgUEmR/AgzyUXpTHT40q7fvt5OJxpBp81ivuzvmU="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogg.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"117299"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00229u3IgUEmR/AgzyUXpTHT40q7fvt5OJxpBp81ivuzvmU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogh.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogh.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dCrQyGAgSivuD8UfG\u002BjDpr9BEzBeCH8\u002B0Tag8GjJzCw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"122508"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022dCrQyGAgSivuD8UfG\u002BjDpr9BEzBeCH8\u002B0Tag8GjJzCw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogh.w7bfnesb8u.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogh.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"w7bfnesb8u"},{"Name":"integrity","Value":"sha256-dCrQyGAgSivuD8UfG\u002BjDpr9BEzBeCH8\u002B0Tag8GjJzCw="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogh.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"122508"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022dCrQyGAgSivuD8UfG\u002BjDpr9BEzBeCH8\u002B0Tag8GjJzCw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogi.82k50gvnra.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogi.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"82k50gvnra"},{"Name":"integrity","Value":"sha256-0OSLRA8yxORw/pRbK4DoPBNJrThPk8jitfiahS1994k="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogi.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"133254"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00220OSLRA8yxORw/pRbK4DoPBNJrThPk8jitfiahS1994k=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogi.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogi.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0OSLRA8yxORw/pRbK4DoPBNJrThPk8jitfiahS1994k="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"133254"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00220OSLRA8yxORw/pRbK4DoPBNJrThPk8jitfiahS1994k=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogj.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogj.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-qfKBYsRkX3uXPA8uDfM1OTWkdNd4P0hqYEuMACq/VuI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"22908"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022qfKBYsRkX3uXPA8uDfM1OTWkdNd4P0hqYEuMACq/VuI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogj.rz15s6c55f.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogj.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rz15s6c55f"},{"Name":"integrity","Value":"sha256-qfKBYsRkX3uXPA8uDfM1OTWkdNd4P0hqYEuMACq/VuI="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogj.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"22908"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022qfKBYsRkX3uXPA8uDfM1OTWkdNd4P0hqYEuMACq/VuI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogk.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogk.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Rkzmo/cYL4Yo2Qcx4CsNpxqpmiWCfdGz3DR2t8PxgXM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"86937"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Rkzmo/cYL4Yo2Qcx4CsNpxqpmiWCfdGz3DR2t8PxgXM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogk.qnbp5wejq5.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogk.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qnbp5wejq5"},{"Name":"integrity","Value":"sha256-Rkzmo/cYL4Yo2Qcx4CsNpxqpmiWCfdGz3DR2t8PxgXM="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogk.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"86937"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022Rkzmo/cYL4Yo2Qcx4CsNpxqpmiWCfdGz3DR2t8PxgXM=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogl.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogl.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ePm8VpNnCwHuTVq\u002B\u002Bv9lX0P3AsSAXi6HE75n6Oegp5o="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"76470"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ePm8VpNnCwHuTVq\u002B\u002Bv9lX0P3AsSAXi6HE75n6Oegp5o=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogl.s34rtfucef.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogl.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"s34rtfucef"},{"Name":"integrity","Value":"sha256-ePm8VpNnCwHuTVq\u002B\u002Bv9lX0P3AsSAXi6HE75n6Oegp5o="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogl.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"76470"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ePm8VpNnCwHuTVq\u002B\u002Bv9lX0P3AsSAXi6HE75n6Oegp5o=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogm.08x6bhgc0i.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogm.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"08x6bhgc0i"},{"Name":"integrity","Value":"sha256-sLwXadRh8Adxa7uM2xfvcHuVZP\u002Bnk4AyuyyMsgrzu40="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogm.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"192682"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022sLwXadRh8Adxa7uM2xfvcHuVZP\u002Bnk4AyuyyMsgrzu40=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogm.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogm.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-sLwXadRh8Adxa7uM2xfvcHuVZP\u002Bnk4AyuyyMsgrzu40="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"192682"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022sLwXadRh8Adxa7uM2xfvcHuVZP\u002Bnk4AyuyyMsgrzu40=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogn.0yynrj1bwl.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogn.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"0yynrj1bwl"},{"Name":"integrity","Value":"sha256-WPiASYBuwn3UuStsHJ2J1Ut4BNR\u002BpTzuHrwijWAFNGI="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogn.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"136901"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022WPiASYBuwn3UuStsHJ2J1Ut4BNR\u002BpTzuHrwijWAFNGI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogn.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogn.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-WPiASYBuwn3UuStsHJ2J1Ut4BNR\u002BpTzuHrwijWAFNGI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"136901"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022WPiASYBuwn3UuStsHJ2J1Ut4BNR\u002BpTzuHrwijWAFNGI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogo.ebr787xplf.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogo.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ebr787xplf"},{"Name":"integrity","Value":"sha256-ClrzyVasjKAQU\u002BBEMes\u002BKURSkPxINFVnNdX9bBBGyuk="},{"Name":"label","Value":"_content/DogAdoptionWebsite/Images/Dogo.jpeg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"272765"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ClrzyVasjKAQU\u002BBEMes\u002BKURSkPxINFVnNdX9bBBGyuk=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/DogAdoptionWebsite/Images/Dogo.jpeg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\Images\Dogo.jpeg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ClrzyVasjKAQU\u002BBEMes\u002BKURSkPxINFVnNdX9bBBGyuk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"272765"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022ClrzyVasjKAQU\u002BBEMes\u002BKURSkPxINFVnNdX9bBBGyuk=\u0022"},{"Name":"Last-Modified","Value":"Wed, 04 Dec 2024 19:32:37 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>
