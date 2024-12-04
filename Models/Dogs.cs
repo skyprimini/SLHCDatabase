@@ -43,6 +43,7 @@ namespace DogAdoptionWebsite.Models
         public string? Description { get; set; }
 
         // Image URL of the dog (for displaying on the Adoption page)
+        [Required]
         public string? ImageUrl { get; set; }
     }
 }

@@ -7,72 +7,72 @@
 <style>
     /* Page Header Styling */
     h1 {
-        font-size: 32px;
-        text-align: center;
-        color: #b5651d; /* Brick color */
-        font-family: 'Georgia', serif;
-        margin-top: 20px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 32px;
+    text-align: center;
+    color: #b5651d; /* Brick color */
+    font-family: 'Georgia', serif;
+    margin-top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     /* Login Form Container */
     .login-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 70vh;
-        background-color: #fdf6e3; /* Pastel yellow background */
-        padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    background-color: #fdf6e3; /* Pastel yellow background */
+    padding: 20px;
     }
 
     /* Form Styling */
     .login-form {
-        width: 100%;
-        max-width: 400px;
-        background-color: #ffffff;
-        border: 2px solid #6b8e23; /* Olive border */
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        padding: 30px;
+    width: 100%;
+    max-width: 400px;
+    background-color: #ffffff;
+    border: 2px solid #6b8e23; /* Olive border */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
     }
 
     .form-floating {
-        margin-bottom: 20px;
+    margin-bottom: 20px;
     }
 
-        .form-floating label {
-            color: #333333; /* Dark gray text */
-        }
+    .form-floating label {
+    color: #333333; /* Dark gray text */
+    }
 
     .form-control {
-        border: 1px solid #6b8e23; /* Olive border */
-        border-radius: 5px;
-        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #6b8e23; /* Olive border */
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
     }
 
-        .form-control:focus {
-            border-color: #b5651d; /* Brick color focus */
-            box-shadow: 0 0 5px rgba(181, 101, 29, 0.5);
-        }
+    .form-control:focus {
+    border-color: #b5651d; /* Brick color focus */
+    box-shadow: 0 0 5px rgba(181, 101, 29, 0.5);
+    }
 
     .btn-primary {
-        background-color: #b5651d; /* Brick color */
-        border-color: #b5651d;
-        font-size: 18px;
-        font-weight: bold;
-        padding: 10px;
-        border-radius: 5px;
-        width: 100%;
+    background-color: #b5651d; /* Brick color */
+    border-color: #b5651d;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
     }
 
-        .btn-primary:hover {
-            background-color: #6b8e23;
-            border-color: #6b8e23;
-        }
+    .btn-primary:hover {
+    background-color: #6b8e23;
+    border-color: #6b8e23;
+    }
 
     .text-danger {
-        font-size: 14px;
-        color: #ff4d4f; /* Highlighted red for validation errors */
+    font-size: 14px;
+    color: #ff4d4f; /* Highlighted red for validation errors */
     }
 </style>
 
@@ -91,6 +91,7 @@
                 <InputText type="password" @bind-Value="Input.Password" class="form-control" placeholder="Password" />
                 <label>Password</label>
                 <ValidationMessage For="() => Input.Password" class="text-danger" />
+
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
         </EditForm>
@@ -139,3 +140,4 @@
         public string Password { get; set; } = "";
     }
 }
+

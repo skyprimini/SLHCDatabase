@@ -34,20 +34,7 @@ namespace DogAdoptionWebsite.Data
                     Status = "Available",
                     Description = "A friendly and playful dog",
                     ImageUrl = "/Images/doga.jpeg"
-                },
-                new Dog
-                {
-                    Name = "Bella",
-                    Age = 2,
-                    Breed = "Labrador Retriever",
-                    Gender = "Female",
-                    Location = "California",
-                    Status = "Adopted",
-                    Description = "Loves to play and cuddle",
-                    ImageUrl = "/Images/dogb.jpeg"
-                }
-
-                // Add more dogs...!!!!
+               }//
             );
 
             context.SaveChanges();

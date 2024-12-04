@@ -1,0 +1,114 @@
+﻿@page "/adoptionforms/edit"
+@using Microsoft.EntityFrameworkCore
+@using DogAdoptionWebsite.Models
+@inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Edit</PageTitle>
+
+<h1>Edit</h1>
+
+<h2>AdoptionForm</h2>
+<hr />
+@if (AdoptionForm is null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <div class="row">
+        <div class="col-md-4">
+            <EditForm method="post" Model="AdoptionForm" OnValidSubmit="UpdateAdoptionForm" FormName="edit" Enhance>
+                <DataAnnotationsValidator />
+                <ValidationSummary role="alert"/>
+                <input type="hidden" name="AdoptionForm.AdoptionId" value="@AdoptionForm.AdoptionId" />
+                <div class="mb-3">
+                    <label for="firstname" class="form-label">FirstName:</label>
+                    <InputText id="firstname" @bind-Value="AdoptionForm.FirstName" class="form-control" aria-required="true"/>
+                    <ValidationMessage For="() => AdoptionForm.FirstName" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="lastname" class="form-label">LastName:</label>
+                    <InputText id="lastname" @bind-Value="AdoptionForm.LastName" class="form-control" aria-required="true"/>
+                    <ValidationMessage For="() => AdoptionForm.LastName" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email:</label>
+                    <InputText id="email" @bind-Value="AdoptionForm.Email" class="form-control" aria-required="true"/>
+                    <ValidationMessage For="() => AdoptionForm.Email" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age:</label>
+                    <InputText id="age" @bind-Value="AdoptionForm.Age" class="form-control" aria-required="true"/>
+                    <ValidationMessage For="() => AdoptionForm.Age" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="currentnumberofpets" class="form-label">CurrentNumberOfPets:</label>
+                    <InputText id="currentnumberofpets" @bind-Value="AdoptionForm.CurrentNumberOfPets" class="form-control" aria-required="true"/>
+                    <ValidationMessage For="() => AdoptionForm.CurrentNumberOfPets" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="employmentstatus" class="form-label">EmploymentStatus:</label>
+                    <InputText id="employmentstatus" @bind-Value="AdoptionForm.EmploymentStatus" class="form-control" aria-required="true"/>
+                    <ValidationMessage For="() => AdoptionForm.EmploymentStatus" class="text-danger" />
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+            </EditForm>
+        </div>
+    </div>
+}
+
+<div>
+    <a href="/adoptionforms">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromQuery]
+    private int AdoptionId { get; set; }
+
+    [SupplyParameterFromForm]
+    private AdoptionForm? AdoptionForm { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        AdoptionForm ??= await context.AdoptionForm.FirstOrDefaultAsync(m => m.AdoptionId == AdoptionId);
+
+        if (AdoptionForm is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+
+    // To protect from overposting attacks, enable the specific properties you want to bind to.
+    // For more information, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task UpdateAdoptionForm()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Attach(AdoptionForm!).State = EntityState.Modified;
+
+        try
+        {
+            await context.SaveChangesAsync();
+        }
+        catch (DbUpdateConcurrencyException)
+        {
+            if (!AdoptionFormExists(AdoptionForm!.AdoptionId))
+            {
+                NavigationManager.NavigateTo("notfound");
+            }
+            else
+            {
+                throw;
+            }
+        }
+
+        NavigationManager.NavigateTo("/adoptionforms");
+    }
+
+    private bool AdoptionFormExists(int adoptionid)
+    {
+        using var context = DbFactory.CreateDbContext();
+        return context.AdoptionForm.Any(e => e.AdoptionId == adoptionid);
+    }
+}

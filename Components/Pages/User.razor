@@ -1,0 +1,65 @@
+﻿@page "/userhome"
+<PageTitle>Home</PageTitle>
+
+
+<style>
+    /* Tab bar styling */
+    .tab {
+        overflow: hidden;
+        border: 2px solid #6b8e23; /* Olive border */
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+
+    .tablink {
+        background-color: inherit;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        text-decoration: none;
+        color: black;
+        font-family: 'Georgia', serif;
+    }
+
+        .tablink:hover, .active-tab {
+            background-color: #808080;
+            color: wheat; /* Hover effect */
+            border-radius: 4px;
+        }
+    /* .active-tab { */
+    /*     background-color: #808080; /* Active tab background */ */
+    /*     color: wheat; /* Active tab text color */ */
+    /* } */
+    /* Carousel image styling */
+    img {
+        border: 4px solid #6b8e23;
+        border-radius: 8px;
+        margin-top: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Page title */
+    h3 {
+        font-size: 24px;
+        text-align: center;
+        color: #b5651d;
+        font-family: 'Georgia', serif;
+        margin-top: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<h1>User Home</h1>
+
+
+
+<div class="tab">
+    <NavLink class="tablink" href="/" active-class="active-tab">Home</NavLink>
+</div>
+
+<h3>Welcome to User dashboard</h3>

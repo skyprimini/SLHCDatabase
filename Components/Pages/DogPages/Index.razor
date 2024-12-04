@@ -6,13 +6,32 @@
 @implements IAsyncDisposable
 @inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
 
-<PageTitle>Index</PageTitle>
+<PageTitle>Dog List</PageTitle>
 
-<h1>Index</h1>
+<h1>Dog List</h1>
 
 <p>
     <a href="dogs/create">Create New</a>
 </p>
+
+<table>
+    @foreach (var item in mydogs)
+    {
+        <tr>
+            <td>
+                <img src=@item.ImageUrl alt="mydog" style="width:500px; height:500px">
+            </td>
+
+            <td>
+                @item.Name
+            </td>
+
+            <td>
+                @item.Description
+            </td>
+        </tr>
+    }
+</table>
 
 <QuickGrid Class="table" Items="context.Dog">
     <PropertyColumn Property="dog => dog.Age" />
@@ -34,10 +53,11 @@
 
 @code {
     private DogAdoptionWebsiteContext context = default!;
-
+    public List<Dog> mydogs;
     protected override void OnInitialized()
     {
         context = DbFactory.CreateDbContext();
+        mydogs = context.Dog.ToList();
     }
 
     public async ValueTask DisposeAsync() => await context.DisposeAsync();

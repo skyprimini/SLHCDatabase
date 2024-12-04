@@ -104,52 +104,14 @@
                 <label>Password</label>
                 <ValidationMessage For="() => Input.Password" class="text-danger" />
             </div>
-            <div class="form-floating">
-                <InputSelect class="form-select" @bind-Value="Input.Role">
-                    <option value="">Select Role</option>
-                    <option value="Admin">Admin</option>
-                    <option value="DefaultUser">User</option>
-                </InputSelect>
-                <label>Role</label>
-                <ValidationMessage For="() => Input.Role" class="text-danger" />
-            </div>
-            <div class="form-floating">
-                <InputSelect class="form-select" @bind-Value="Input.Age">
-                    <option value="">Select Age Group</option>
-                    <option value="eighteenplus">Over 18 years old</option>
-                    <option value="undereighteen">Under 18 years old</option>
-                </InputSelect>
-                <label>Age</label>
-                <ValidationMessage For="() => Input.Age" class="text-danger" />
-            </div>
-
-            <div class="form-floating">
-                <InputSelect class="form-select" id="currentnumberofpets" @bind-Value="Input.NumberOfPets">
-                    <option value="">Indicate number of pets you currently own</option>
-                    <option value="lessthan1">Less than one</option>
-                    <option value="between">0-3</option>
-                    <option value="graterthan3">Greater than three</option>
-                </InputSelect>
-                <label>Current Number Of Pets</label>
-                <ValidationMessage For="() => Input.NumberOfPets" class="text-danger" />
-            </div>
-            <div class="form-floating">
-                <InputSelect class="form-select" id="employmentstatus" @bind-Value="Input.EmploymentStatus">
-                    <option value="">Select Employment Status</option>
-                    <option value="employed">Employed</option>
-                    <option value="unemployed">Uemployed</option>
-                </InputSelect>
-                <label>Employment Status</label>
-                <ValidationMessage For="() => Input.EmploymentStatus" class="text-danger" />
-            </div>
-
+            <!---->
             <button type="submit" class="btn btn-primary">Register</button>
         </EditForm>
     </div>
 </div>
 
 @code {
-    private async Task HandleSubmit(EditContext context)
+     private async Task HandleSubmit(EditContext context)
     {
         Console.WriteLine("Form submitted");
         RegisterUser();
