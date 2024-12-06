@@ -13,6 +13,13 @@
 
 <h1>Dogs Available for Adoption</h1>
 
+<div class="search-container">
+<form action="/search" method="get">
+    <input type="search" name="query" placeholder="Search..." />
+    <input type="submit" value="Search" />
+</form>
+</div>
+
 <QuickGrid Class="table" Items="dogs.AsQueryable()">
     <PropertyColumn Property="dog => dog.Name" Title="Name" />
     <PropertyColumn Property="dog => dog.Breed" Title="Breed" />
@@ -153,6 +160,37 @@
         font-size: 14px;
         color: #ff4d4f; /* Highlighted red for validation errors */
     }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: flex-end;
+        margin: 10px;
+    }
+
+        .search-container input[type="search"] {
+            padding: 8px;
+            border: 2px solid #6b8e23; /* Olive */
+            border-radius: 5px;
+            font-size: 14px;
+            width: 200px;
+        }
+
+        .search-container input[type="submit"] {
+            background-color: #b5651d; /* Brick */
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .search-container input[type="submit"]:hover {
+                background-color: #8b4513; /* Darker brick for hover */
+            }
+
+
 </style>
 
 <div class="register-container">
