@@ -1,6 +1,7 @@
 ﻿@page "/Login"
 @using System.ComponentModel.DataAnnotations
 @layout DogAdoptionWebsite.Components.Layout.MainLayout
+@inject NavigationManager NavigationManager
 
 <PageTitle>Login</PageTitle>
 
@@ -91,7 +92,15 @@
                 <InputText type="password" @bind-Value="Input.Password" class="form-control" placeholder="Password" />
                 <label>Password</label>
                 <ValidationMessage For="() => Input.Password" class="text-danger" />
-
+            </div>
+            <div class="form-floating">
+                <select @bind="Input.Role" class="form-control">
+                    <option value="">Select Role</option>
+                    <option value="Admin">Admin</option>
+                    <option value="User">User</option>
+                </select>
+                <label>Role</label>
+                <ValidationMessage For="() => Input.Role" class="text-danger" />
             </div>
             <button type="submit" class="btn btn-primary">Login</button>
         </EditForm>
@@ -101,27 +110,37 @@
 @code {
     private InputModel Input { get; set; } = new();
 
-    [Parameter]
-    [SupplyParameterFromQuery(Name = "Email")]
-    public string? Email
-    {
-        get => Input.Email;
-        set => Input.Email = value ?? ""; // Assign value to Input.Email
-    }
+    // [Parameter]
+    // [SupplyParameterFromQuery(Name = "Email")]
+    // public string? Email
+    // {
+    //     get => Input.Email;
+    //     set => Input.Email = value ?? ""; Assign value to Input.Email
+    // }
 
-    [Parameter]
-    [SupplyParameterFromQuery(Name = "Password")]
-    public string? Password
-    {
-        get => Input.Password;
-        set => Input.Password = value ?? ""; // Assign value to Input.Password
-    }
+    // [Parameter]
+    // [SupplyParameterFromQuery(Name = "Password")]
+    // public string? Password
+    // {
+    //     get => Input.Password;
+    //     set => Input.Password = value ?? ""; Assign value to Input.Password
+    // }
 
     private async Task OnLogin()
     {
-        if (!string.IsNullOrEmpty(Input.Email) && !string.IsNullOrEmpty(Input.Password))
+        if (!string.IsNullOrEmpty(Input.Email) && 
+            !string.IsNullOrEmpty(Input.Password) && 
+            !string.IsNullOrEmpty(Input.Role))
         {
-            // Perform login authentication (logic here)
+            // Redirect based on role
+            if (Input.Role == "Admin")
+            {
+                NavigationManager.NavigateTo("/admin");
+            }
+            else if (Input.Role == "User")
+            {
+                NavigationManager.NavigateTo("/users");
+            }
         }
         else
         {
@@ -138,6 +157,9 @@
         [Required(ErrorMessage = "Password is required.")]
         [DataType(DataType.Password)]
         public string Password { get; set; } = "";
+
+        [Required(ErrorMessage = "Role is required.")]
+        public string Role { get; set; } = "";
     }
 }
 

@@ -1,7 +1,6 @@
-﻿@page "/users/create"
+﻿@page "/LoginUser"
 @using Microsoft.EntityFrameworkCore
 @using DogAdoptionWebsite.Models
-@inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
 @inject NavigationManager NavigationManager
 <style>
     /* Page Header Styling */
@@ -14,8 +13,8 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    /* Register Form Container */
-    .register-container {
+    /* Login Form Container */
+    .login-container {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -25,7 +24,7 @@
     }
 
     /* Form Styling */
-    .register-form {
+    .login-form {
         width: 100%;
         max-width: 500px;
         background-color: #ffffff;
@@ -75,31 +74,14 @@
     }
 </style>
 
+<PageTitle>Login</PageTitle>
 
-
-<PageTitle>Register</PageTitle>
-
-<h1>Register</h1>
-
-<h2>Register</h2>
 <hr />
-<div class="register-container">
-    <div class="register-form">
-        <EditForm method="post" Model="User" OnValidSubmit="AddUser" FormName="create" Enhance>
+<div class="login-container">
+    <div class="login-form">
+        <EditForm method="post" Model="User" OnValidSubmit="LoginUsers" FormName="login" Enhance>
             <DataAnnotationsValidator />
             <ValidationSummary class="text-danger" role="alert" />
-
-            <div class="form-floating">
-                <label for="firstname">First Name:</label>
-                <InputText id="firstname" @bind-Value="User.FirstName" class="form-control" aria-required="true" />
-                <ValidationMessage For="() => User.FirstName" class="text-danger" />
-            </div>
-
-            <div class="form-floating">
-                <label for="lastname">Last Name:</label>
-                <InputText id="lastname" @bind-Value="User.LastName" class="form-control" aria-required="true" />
-                <ValidationMessage For="() => User.LastName" class="text-danger" />
-            </div>
 
             <div class="form-floating">
                 <label for="email">Email:</label>
@@ -114,44 +96,30 @@
             </div>
 
             <div class="form-floating">
-                <label for="role">Role:</label>
-                <InputText id="role" @bind-Value="User.Role" class="form-control" aria-required="true" />
-                <ValidationMessage For="() => User.Role" class="text-danger" />
-            </div>
+            <label for="role">Select Role:</label>
+            <InputSelect id="role" @bind-Value="SelectedRole" class="form-control" aria-required="true">
+            <option value="" disabled>Select a Role</option>
+            <option value="Admin">Admin</option>
+            <option value="User">User</option>
+            </InputSelect>
+             <ValidationMessage For="() => SelectedRole" class="text-danger" />
+</div>
 
-            <div class="form-floating">
-                <label for="age">Age:</label>
-                <InputText id="age" @bind-Value="User.Age" class="form-control" aria-required="true" />
-                <ValidationMessage For="() => User.Age" class="text-danger" />
-            </div>
-
-            <div class="form-floating">
-                <label for="currentnumberofpets">Current Number of Pets:</label>
-                <InputText id="currentnumberofpets" @bind-Value="User.CurrentNumberOfPets" class="form-control" aria-required="true" />
-                <ValidationMessage For="() => User.CurrentNumberOfPets" class="text-danger" />
-            </div>
-
-            <div class="form-floating">
-                <label for="employmentstatus">Employment Status:</label>
-                <InputText id="employmentstatus" @bind-Value="User.EmploymentStatus" class="form-control" aria-required="true" />
-                <ValidationMessage For="() => User.EmploymentStatus" class="text-danger" />
-            </div>
-
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </EditForm>
     </div>
 </div> <!---->
-
 @code {
+    public string SelectedRole { get; set; } = string.Empty;
     [SupplyParameterFromForm]
     public User User { get; set; } = new();
 
-    // To protect from overposting attacks, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
-    private async Task AddUser()
+    // Simulate login regardless of database
+    private async Task LoginUsers()
     {
-        using var context = DbFactory.CreateDbContext();
-        context.User.Add(User);
-        await context.SaveChangesAsync();
-        NavigationManager.NavigateTo("/login");
+ 
+
+        // Log in any user regardless of database check
+        NavigationManager.NavigateTo("/home"); // Redirect to the home page or dashboard
     }
 }
