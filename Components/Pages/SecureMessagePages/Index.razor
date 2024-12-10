@@ -1,0 +1,40 @@
+﻿@page "/securemessages"
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using DogAdoptionWebsite.Models
+@using DogAdoptionWebsite.Data
+@implements IAsyncDisposable
+@inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
+
+<PageTitle>Index</PageTitle>
+
+<h1>Index</h1>
+
+<p>
+    <a href="securemessages/create">Create New</a>
+</p>
+
+<QuickGrid Class="table" Items="context.SecureMessage">
+    <PropertyColumn Property="securemessage => securemessage.FirstName" />
+    <PropertyColumn Property="securemessage => securemessage.LastName" />
+    <PropertyColumn Property="securemessage => securemessage.Email" />
+    <PropertyColumn Property="securemessage => securemessage.Subject" />
+    <PropertyColumn Property="securemessage => securemessage.Message" />
+
+    <TemplateColumn Context="securemessage">
+        <a href="@($"securemessages/edit?securemessageid={securemessage.SecureMessageId}")">Edit</a> |
+        <a href="@($"securemessages/details?securemessageid={securemessage.SecureMessageId}")">Details</a> |
+        <a href="@($"securemessages/delete?securemessageid={securemessage.SecureMessageId}")">Delete</a>
+    </TemplateColumn>
+</QuickGrid>
+
+@code {
+    private DogAdoptionWebsiteContext context = default!;
+
+    protected override void OnInitialized()
+    {
+        context = DbFactory.CreateDbContext();
+    }
+
+    public async ValueTask DisposeAsync() => await context.DisposeAsync();
+}

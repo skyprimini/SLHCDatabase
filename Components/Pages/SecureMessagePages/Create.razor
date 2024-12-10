@@ -1,0 +1,156 @@
+﻿@page "/securemessages/create"
+@using Microsoft.EntityFrameworkCore
+@using DogAdoptionWebsite.Models
+@inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Contact Us</PageTitle>
+
+<h3>Contact Us</h3>
+<p>
+    If you have any questions or would like to get in touch, feel free to contact us!
+</p>
+<p>
+    Email:
+    <a href="mailto:support@dogadoptionwebsite.com">
+        support@dogadoptionwebsite.com
+    </a>
+</p>
+
+<h2>SecureMessage</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="SecureMessage" OnValidSubmit="AddSecureMessage" FormName="create" Enhance>
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" role="alert"/>
+            <div class="mb-3">
+                <label for="firstname" class="form-label">FirstName:</label> 
+                <InputText id="firstname" @bind-Value="SecureMessage.FirstName" class="form-control" aria-required="true"/> 
+                <ValidationMessage For="() => SecureMessage.FirstName" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="lastname" class="form-label">LastName:</label> 
+                <InputText id="lastname" @bind-Value="SecureMessage.LastName" class="form-control" aria-required="true"/> 
+                <ValidationMessage For="() => SecureMessage.LastName" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label> 
+                <InputText id="email" @bind-Value="SecureMessage.Email" class="form-control" aria-required="true"/> 
+                <ValidationMessage For="() => SecureMessage.Email" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="subject" class="form-label">Subject:</label> 
+                <InputText id="subject" @bind-Value="SecureMessage.Subject" class="form-control" /> 
+                <ValidationMessage For="() => SecureMessage.Subject" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="message" class="form-label">Message:</label> 
+                <InputText id="message" @bind-Value="SecureMessage.Message" class="form-control" /> 
+                <ValidationMessage For="() => SecureMessage.Message" class="text-danger" /> 
+            </div>        
+            <button type="submit" class="btn btn-primary">Send Message</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/securemessages">Back to List</a>
+</div>
+
+<style>
+    h1 {
+        font-size: 32px;
+        text-align: center;
+        color: #b5651d; /* Brick color */
+        font-family: 'Georgia', serif;
+        margin-top: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+        background-color: #FFF9E3; /* Pale pastel yellow */
+        color: #333333; /* Dark gray for text */
+    }
+
+    h3 {
+        color: #C1440E; /* Brick color */
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 1.1rem;
+        color: #333333;
+        line-height: 1.6;
+    }
+
+    a {
+        color: #C1440E;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        a:hover {
+            color: #A1360B; /* Slightly darker brick */
+        }
+
+    .contact-container {
+        background-color: #FFF4DB;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+        .contact-container p {
+            margin-top: 10px;
+        }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        font-size: 1rem;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+
+        .form-control:focus {
+            border-color: #C1440E;
+            box-shadow: 0 0 5px rgba(194, 68, 14, 0.5);
+        }
+
+    .btn-submit {
+        background-color: #C1440E;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+
+        .btn-submit:hover {
+            background-color: #A1360B;
+        }
+</style>
+
+@code {
+    [SupplyParameterFromForm]
+    private SecureMessage SecureMessage { get; set; } = new();
+
+    // To protect from overposting attacks, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task AddSecureMessage()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.SecureMessage.Add(SecureMessage);
+        await context.SaveChangesAsync();
+        //NavigationManager.NavigateTo("/");
+        Console.WriteLine("Message Sent");
+    }
+}
