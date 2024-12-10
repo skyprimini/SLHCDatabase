@@ -6,9 +6,9 @@
 @implements IAsyncDisposable
 @inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
 
-<PageTitle>Website Users</PageTitle>
+<PageTitle>Index</PageTitle>
 
-<h1>Website Users</h1>
+<h1>Index</h1>
 
 <p>
     <a href="users/create">Create New</a>
@@ -20,9 +20,6 @@
     <PropertyColumn Property="user => user.Email" />
     <PropertyColumn Property="user => user.Password" />
     <PropertyColumn Property="user => user.Role" />
-    <PropertyColumn Property="user => user.Age" />
-    <PropertyColumn Property="user => user.CurrentNumberOfPets" />
-    <PropertyColumn Property="user => user.EmploymentStatus" />
 
     <TemplateColumn Context="user">
         <a href="@($"users/edit?id={user.Id}")">Edit</a> |

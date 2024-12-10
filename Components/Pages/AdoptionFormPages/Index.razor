@@ -6,7 +6,7 @@
 @implements IAsyncDisposable
 @inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
 
-<PageTitle>Submitted Forms</PageTitle>
+<PageTitle>Index</PageTitle>
 
 <h1>Index</h1>
 
@@ -21,6 +21,10 @@
     <PropertyColumn Property="adoptionform => adoptionform.Age" />
     <PropertyColumn Property="adoptionform => adoptionform.CurrentNumberOfPets" />
     <PropertyColumn Property="adoptionform => adoptionform.EmploymentStatus" />
+    <PropertyColumn Property="adoptionform => adoptionform.EmployeePhoneNumber" />
+    <PropertyColumn Property="adoptionform => adoptionform.PetName" />
+    <PropertyColumn Property="adoptionform => adoptionform.PetBreed" />
+    <PropertyColumn Property="adoptionform => adoptionform.PetAge" />
 
     <TemplateColumn Context="adoptionform">
         <a href="@($"adoptionforms/edit?adoptionid={adoptionform.AdoptionId}")">Edit</a> |
