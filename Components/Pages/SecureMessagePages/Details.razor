@@ -1,0 +1,54 @@
+﻿@page "/securemessages/details"
+@using Microsoft.EntityFrameworkCore
+@using DogAdoptionWebsite.Models
+@inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Details</PageTitle>
+
+<h1>Details</h1>
+
+<div>
+    <h2>SecureMessage</h2>
+    <hr />
+    @if (securemessage is null)
+    {
+        <p><em>Loading...</em></p>
+    }
+    else {
+        <dl class="row">
+            <dt class="col-sm-2">FirstName</dt>
+            <dd class="col-sm-10">@securemessage.FirstName</dd>
+            <dt class="col-sm-2">LastName</dt>
+            <dd class="col-sm-10">@securemessage.LastName</dd>
+            <dt class="col-sm-2">Email</dt>
+            <dd class="col-sm-10">@securemessage.Email</dd>
+            <dt class="col-sm-2">Subject</dt>
+            <dd class="col-sm-10">@securemessage.Subject</dd>
+            <dt class="col-sm-2">Message</dt>
+            <dd class="col-sm-10">@securemessage.Message</dd>
+        </dl>
+        <div>
+            <a href="@($"/securemessages/edit?securemessageid={securemessage.SecureMessageId}")">Edit</a> |
+            <a href="@($"/securemessages")">Back to List</a>
+        </div>
+    }
+</div>
+
+@code {
+    private SecureMessage? securemessage;
+
+    [SupplyParameterFromQuery]
+    private int SecureMessageId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        using var context = DbFactory.CreateDbContext();
+        securemessage = await context.SecureMessage.FirstOrDefaultAsync(m => m.SecureMessageId == SecureMessageId);
+
+        if (securemessage is null)
+        {
+            NavigationManager.NavigateTo("notfound");
+        }
+    }
+}
