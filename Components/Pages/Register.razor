@@ -1,6 +1,6 @@
 ﻿@page "/Register"
 @using System.ComponentModel.DataAnnotations
-@inject NavigationManager NavigationManager
+@inject NavigationManager navigationManager
 @layout DogAdoptionWebsite.Components.Layout.MainLayout
 
 <PageTitle>Register</PageTitle>
@@ -77,6 +77,10 @@
     }
 </style>
 
+
+<!--Current Error: <form> elements have a @formname attribute with any unique value, or 
+    pass a FormName parameter if using <EditForm>.-->
+
 <div class="register-container">
     <div class="register-form">
         <h1>Register</h1>
@@ -108,19 +112,26 @@
             <button type="submit" class="btn btn-primary">Register</button>
         </EditForm>
     </div>
+
 </div>
 
+
 @code {
-     private async Task HandleSubmit(EditContext context)
+
+    //[SupplyParameterFromForm]
+
+     public async Task HandleSubmit(EditContext context)
     {
         Console.WriteLine("Form submitted");
         RegisterUser();
+        
     }
     private InputModel Input { get; set; } = new();
     private string FeedbackMessage { get; set; } = string.Empty;
 
     public void RegisterUser()
     {
+       
         // Check all fields
         if (string.IsNullOrWhiteSpace(Input.FirstName) ||
             string.IsNullOrWhiteSpace(Input.LastName) ||
@@ -135,7 +146,7 @@
             return;
         }
 
-        // Validate conditions
+        // Validatations
         if (Input.Age != "eighteenplus")
         {
             FeedbackMessage = "You must be over 18 years old to register.";
@@ -157,7 +168,7 @@
         // If all conditions pass
         FeedbackMessage = "Registration successful!";
         // Redirect to login page
-        NavigationManager.NavigateTo("/login");
+        navigationManager.NavigateTo("/login");
     }
 
     private sealed class InputModel

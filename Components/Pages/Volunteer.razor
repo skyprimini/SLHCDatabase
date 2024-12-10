@@ -49,42 +49,25 @@
     color: #333333; /* Dark gray text */
     }
 
-    .form-control {
-    border: 1px solid #6b8e23; /* Olive border */
-    border-radius: 5px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-    }
+<h3>Volunteer with Us</h3>
 
-    .form-control:focus {
-    border-color: #b5651d; /* Brick color focus */
-    box-shadow: 0 0 5px rgba(181, 101, 29, 0.5);
-    }
+<p>We are always looking for passionate volunteers to help support our dogs and make a difference! If you're interested in volunteering, please fill out the form below.</p>
 
-    .btn-primary {
-    background-color: #b5651d; /* Brick color */
-    border-color: #b5651d;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 5px;
-    width: 100%;
-    }
+<h2>Encouraging you to Volunteer!</h2>
+<p>Everything we do for our dogs in need requires a lot of groundwork. Anything you do will help us.
+    Your duties are:
+</p>
+<ul>
+    <li>Walking Dogs</li>
+    <li>Giving the Dogs a bath</li>
+    <li>Feeding and cleaning up after them</li>
+    <li>Spend time with them</li>
+    <li>Be sure to fill out the form completely if you are interested in helping your local shelter.</li>
+</ul>
 
-    .btn-primary:hover {
-    background-color: #6b8e23;
-    border-color: #6b8e23;
-    }
-</style>
-
-
-
-<div class="volunteer-container"> 
-    <div class="volunteer-form">
-        <h3>Volunteer with Us</h3>
-        <p>We are always looking for passionate volunteers to help support our dogs and make a difference! If you're interested in volunteering, please fill out the form below.</p>
-        <EditForm Model="volunteerInfo" OnValidSubmit="HandleSubmit">
-            <DataAnnotationsValidator />
-            <ValidationSummary />
+<EditForm Model="volunteerInfo" OnValidSubmit="HandleSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
 
             <div class="form-group">
                 <InputText id="name" class="form-control" @bind-Value="volunteerInfo.Name" placeholder="Full Name" />
