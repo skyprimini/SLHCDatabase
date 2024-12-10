@@ -1,53 +1,124 @@
 ﻿@page "/volunteer"
 @inject DogAdoptionWebsite.Data.DogAdoptionWebsiteContext DbContext
 
+    <style >
+    /* Page Header Styling */
+    h3 {
+        font-size: 22px;
+        text-align: center;
+        color: #b5651d; /* Brick color */
+        font-family: 'Georgia', serif;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-<h3>Volunteer with Us</h3>
 
-<p>We are always looking for passionate volunteers to help support our dogs and make a difference! If you're interested in volunteering, please fill out the form below.</p>
+    /* volunteer Form Container */
+    .volunteer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 70vh;
+        background-color: #fdf6e3; /* Pastel yellow background */
+        padding: 20px;
+    }
 
-<h2>Encouraging you to Volunteer!</h2>
-<p>Everything we do for our dogs in need requires a lot of groundwork. Anything you do will help us.
-    Your duties are:
-</p>
-<ul>
-    <li>Walking Dogs</li>
-    <li>Giving the Dogs a bath</li>
-    <li>Feeding and cleaning up after them</li>
-    <li>Spend time with them</li>
-    <li>Be sure to fill out the form completely if you are interested in helping your local shelter.</li>
-</ul>
+    /* Form Styling */
+    .volunteer-form {
+        width: 100%;
+        max-width: 400px;
+        background-color: #ffffff;
+        border: 2px solid #6b8e23; /* Olive border */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
 
-<EditForm Model="volunteerInfo" OnValidSubmit="HandleSubmit">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
+    .form-group {
+        margin-bottom: 20px;
+    }
 
-    <div class="form-group">
-        <label for="name">Full Name</label>
-        <InputText id="name" class="form-control" @bind-Value="volunteerInfo.Name" />
-        <ValidationMessage For="@(() => volunteerInfo.Name)" />
-    </div>
+        .form-group label {
+            color: #333333; /* Dark gray text */
+        }
 
-    <div class="form-group">
-        <label for="email">Email Address</label>
-        <input type="email" id="email" class="form-control custom-width" style="width: 100%;" @bind="volunteerInfo.Email" />
-        <ValidationMessage For="@(() => volunteerInfo.Email)" />
-    </div>
+    .form-control {
+        border: 1px solid #6b8e23; /* Olive border */
+        border-radius: 5px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
 
-    <div class="form-group">
-        <label for="availability">Availability</label>
-        <InputText id="availability" class="form-control" @bind-Value="volunteerInfo.Availability" />
-        <ValidationMessage For="@(() => volunteerInfo.Availability)" />
-    </div>
+        .form-control:focus {
+            border-color: #b5651d; /* Brick color focus */
+            box-shadow: 0 0 5px rgba(181, 101, 29, 0.5);
+        }
 
-    <div class="form-group">
-        <label for="skills">Skills or Experience</label>
-        <InputTextArea id="skills" class="form-control" @bind-Value="volunteerInfo.Skills" />
-        <ValidationMessage For="@(() => volunteerInfo.Skills)" />
-    </div>
+    .btn-primary {
+        background-color: #b5651d; /* Brick color */
+        border-color: #b5651d;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+    }
 
-    <button type="submit" class="btn btn-primary">Submit</button>
-</EditForm>
+        .btn-primary:hover {
+            background-color: #6b8e23;
+            border-color: #6b8e23;
+        }
+
+</style>
+<div class="volunteer-container"> 
+    <div class="volunteer-form">
+
+        <h3>Encouraging you to Volunteer!</h3>
+        <p>Everything we do for our dogs in need requires a lot of groundwork. Anything you do will help us.
+            Your duties are:
+        </p>
+        <ul>
+            <li>Walking Dogs</li>
+            <li>Giving the Dogs a bath</li>
+            <li>Feeding and cleaning up after them</li>
+            <li>Spend time with them</li>
+            <li>Be sure to fill out the form completely if you are interested in helping your local shelter.</li>
+        </ul>
+
+        <EditForm Model="volunteerInfo" OnValidSubmit="HandleSubmit">
+            <DataAnnotationsValidator />
+            <ValidationSummary />
+
+                    <div class="form-group">
+                        <InputText id="name" class="form-control" @bind-Value="volunteerInfo.Name" placeholder="Full Name" />
+                        <label for="name">Full Name</label>
+                        <ValidationMessage For="@(() => volunteerInfo.Name)" />
+                    </div>
+
+                    <div class="form-group">
+                        <InputText type="email" id="email" class="form-control" @bind-Value="volunteerInfo.Email" placeholder="Email"/>
+                        <label for="email">Email Address</label>
+                        <ValidationMessage For="@(() => volunteerInfo.Email)" />
+                    </div>
+
+                    <div class="form-group">
+                        <InputText id="availability" class="form-control" @bind-Value="volunteerInfo.Availability" placeholder="Availability"/>
+                        <label for="availability">Availability</label>
+                        <ValidationMessage For="@(() => volunteerInfo.Availability)" />
+                    </div>
+
+                    <div class="form-group">
+                        <InputText id="skills" class="form-control" @bind-Value="volunteerInfo.Skills" placeholder="Skills"/>
+                        <label for="skills">Skills or Experience</label>
+                        <ValidationMessage For="@(() => volunteerInfo.Skills)" />
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </EditForm>
+        </div>
+</div>
+
+
+
+
 
 @if (formSubmitted)
 {

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using DogAdoptionWebsite.Data;
+using System.ComponentModel.DataAnnotations;
 
 namespace DogAdoptionWebsite.Models
 {
@@ -45,5 +46,7 @@ namespace DogAdoptionWebsite.Models
         // Image URL of the dog (for displaying on the Adoption page)
         [Required]
         public string? ImageUrl { get; set; }
+
+        
     }
 }

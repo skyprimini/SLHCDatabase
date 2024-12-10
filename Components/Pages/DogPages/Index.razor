@@ -14,26 +14,11 @@
     <a href="dogs/create">Create New</a>
 </p>
 
-<table>
-    @foreach (var item in mydogs)
-    {
-        <tr>
-            <td>
-                <img src=@item.ImageUrl alt="mydog" style="width:500px; height:500px">
-            </td>
-
-            <td>
-                @item.Name
-            </td>
-
-            <td>
-                @item.Description
-            </td>
-        </tr>
-    }
-</table>
 
 <QuickGrid Class="table" Items="context.Dog">
+    <TemplateColumn>
+        <img src="@context.ImageUrl" alt="Dog Image" style="width:50%;height:50%;" />
+    </TemplateColumn>
     <PropertyColumn Property="dog => dog.Age" />
     <PropertyColumn Property="dog => dog.Name" />
     <PropertyColumn Property="dog => dog.Gender" />
@@ -42,7 +27,7 @@
     <PropertyColumn Property="dog => dog.Location" />
     <PropertyColumn Property="dog => dog.Status" />
     <PropertyColumn Property="dog => dog.Description" />
-    <PropertyColumn Property="dog => dog.ImageUrl" />
+    
 
     <TemplateColumn Context="dog">
         <a href="@($"dogs/edit?id={dog.Id}")">Edit</a> |

@@ -1,0 +1,155 @@
+﻿@layout DogAdoptionWebsite.Components.Layout.MainLayout
+@page "/dog list"
+@using System.ComponentModel.DataAnnotations
+@inject NavigationManager NavigationManager
+@using Microsoft.EntityFrameworkCore
+@using Microsoft.AspNetCore.Components.QuickGrid
+@using DogAdoptionWebsite.Models
+@using DogAdoptionWebsite.Data
+@implements IAsyncDisposable
+@inject IDbContextFactory<DogAdoptionWebsiteContext> DbFactory
+
+<PageTitle>Available Dogs for Adoption</PageTitle>
+
+<h1>Dogs Available for Adoption</h1>
+
+<div class="search-container">
+<form action="/dog list" data-enhance data-permanent>
+    <input type="search" name="DogFilter" placeholder="Search by name, breed..."/>
+    <input type="submit" value="Search" />
+</form>
+    <form action="/dog list" data-enhance data-permanent>
+        <input type="submit" value="Reset" />
+    </form>
+</div>
+
+<QuickGrid Class="table" Items="FilteredDogs">
+    <TemplateColumn>
+        <img src="@context.ImageUrl" alt="Dog Image" style="width:50%;height:50%;" />
+    </TemplateColumn>
+    <PropertyColumn Property="dog => dog.Age" />
+    <PropertyColumn Property="dog => dog.Name" />
+    <PropertyColumn Property="dog => dog.Gender" />
+    <PropertyColumn Property="dog => dog.Breed" />
+    <PropertyColumn Property="dog => dog.Location" />
+    <PropertyColumn Property="dog => dog.Status" />
+    <PropertyColumn Property="dog => dog.Description" />
+</QuickGrid>
+
+@code {
+    [SupplyParameterFromQuery]
+    private string? DogFilter { get; set; }
+
+    private IQueryable<Dog> FilteredDogs =>
+        context.Dog.Where(d => d.Name!.Contains(DogFilter ?? string.Empty) ||
+                               d.Breed!.Contains(DogFilter ?? string.Empty) ||
+                               d.Gender!.Contains(DogFilter ?? string.Empty) ||
+                               d.Location!.Contains(DogFilter ?? string.Empty) ||
+                               d.Status!.Contains(DogFilter ?? string.Empty) ||
+                               d.Description!.Contains(DogFilter ?? string.Empty)
+        );
+
+    // Create a struct for dog information
+    struct DogInfo
+    {
+
+        public string Name { get; set; }
+        public string Breed { get; set; }
+        <!-- Add this to list-->
+        public string Gender { get; set; }
+        public int Age { get; set; }
+        <!-- Add this to list-->
+        <!-- public string Weight { get; set; } -->
+        <!-- Add this to list-->
+        public string Description { get; set; }
+        public string Location { get; set; }
+        public string Status { get; set; }
+
+
+    }
+
+    private DogAdoptionWebsiteContext context = default!;
+    public string searchQuery = string.Empty; //user's search input
+
+    protected override void OnInitialized()
+    {
+        context = DbFactory.CreateDbContext();
+    }
+
+    public async ValueTask DisposeAsync() => await context.DisposeAsync();
+}
+
+
+<style>
+    /* Page Header Styling */
+    h1 {
+        font-size: 32px;
+        text-align: center;
+        color: #b5651d; /* Brick color */
+        font-family: 'Georgia', serif;
+        margin-top: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        justify-content: flex-end;
+        margin: 10px;
+    }
+
+    .search-container input[type="search"] {
+        padding: 8px;
+        border: 2px solid #6b8e23; /* Olive */
+        border-radius: 5px;
+        font-size: 14px;
+        width: 200px;
+    }
+
+    .search-container input[type="submit"] {
+        background-color: #b5651d; /* Brick */
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .search-container input[type="submit"]:hover {
+        background-color: #8b4513; /* Darker brick for hover */
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        font-size: 16px;
+        text-align: left;
+        font-family: 'Arial', sans-serif;
+    }
+
+    .table th, .table td {
+        padding: 12px 15px;
+        border: 1px solid #ddd;
+    }
+
+    .table th {
+        background-color: #8b4513; /* Olive */
+        color: white;
+        text-align: center;
+    }
+
+    .table tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    img {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 10px 0;
+    }
+
+</style>

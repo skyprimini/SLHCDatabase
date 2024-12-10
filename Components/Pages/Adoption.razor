@@ -6,115 +6,14 @@
 @using Microsoft.AspNetCore.Components.QuickGrid
 @using DogAdoptionWebsite.Models
 @using DogAdoptionWebsite.Data
-@implements IAsyncDisposable
+
 @inject IDbContextFactory<DogAdoptionWebsiteContext> DbFactory
 
 <PageTitle>Available Dogs for Adoption</PageTitle>
 
-<h1>Dogs Available for Adoption</h1>
-
-<QuickGrid Class="table" Items="dogs.AsQueryable()">
-    <PropertyColumn Property="dog => dog.Name" Title="Name" />
-    <PropertyColumn Property="dog => dog.Breed" Title="Breed" />
-    <PropertyColumn Property="dog => dog.Age" Title="Age" />
-    <PropertyColumn Property="dog => dog.Location" Title="Location" />
-    <PropertyColumn Property="dog => dog.Status" Title="Status" />
-    <PropertyColumn Property="dog => dog.ImageUrl" Title="Image" />
-
-   <TemplateColumn>
-   <templatecolumn Title="Image"> 
-       <template> 
-             <img src="@context.ImageUrl" alt="dog image" style="width: 500px; height: 500px;"/> 
-       </template>     
-   </TemplateColumn>
-   </TemplateColumn>
 
 
- </QuickGrid> 
 
-@code {
-    // Create a struct for dog information
-    struct DogInfo
-    {
-
-        public string Name { get; set; }
-        public string Breed { get; set; }
-        <!-- Add this to list--> public string Gender { get; set; }
-        public int Age { get; set; }
-        <!-- Add this to list--> public string Weight { get; set; }
-        <!-- Add this to list-->
-        public string Description { get; set; }
-        public string Location { get; set; }
-        public string Status { get; set; }
-        public string ImageUrl { get; set; }
-
-
-    }
-
-    private DogAdoptionWebsiteContext context = default!;
-    private List<DogInfo> dogs; // List to store the dog data
-
-    protected override void OnInitialized()
-    {
-        dogs = new List<DogInfo>();
-        context = DbFactory.CreateDbContext();
-
-        // LINQ query to fetch data from the Dog table
-        var result = from dog in context.Dog
-                     select new
-                     {
-                         dog.Name,
-                         dog.Breed,
-                         dog.Age,
-                         dog.Location,
-                         dog.Status,
-                         dog.Weight,
-                         dog.ImageUrl,
-        
-                     };
-
-        // Map the result to the DogInfo list
-        foreach (var item in result)
-        {
-            DogInfo tempDog = new DogInfo
-                {
-                    Name = item.Name,
-                    Breed = item.Breed,
-                    Age = item.Age,
-                    Location = item.Location,
-                    Status = item.Status,
-                    ImageUrl = item.ImageUrl,
-                };   
-
-            dogs.Add(tempDog);
-        }
-    }
-
-    public async ValueTask DisposeAsync() => await context.DisposeAsync();
-}
-<h3>Available Dogs for Adoption</h3>
-
-<h2>Adopt</h2>
-        <p>Restrictions for Adoption:</p>
-        <ul>
-            <li>You must be 18 or older.</li>
-            <li>Must have valid payment method.</li>
-            <li>Must be employed.</li>
-            <li>You cannot have more than 3 dogs in your home.</li>
-            <li>You do not attend the interview.</li>
-            <li>Must have a valid phone number.</li>
-        </ul>
-
-<h2>Adoption Process</h2>
-        <p>Here is how the adoption process goes:</p>
-        <ul>
-            <li>Fill out the adoption form with the dog of your choice, having their name, breed, and age in mind.</li>
-            <li>Be sure to fill every box listed in the adoption form.</li>
-            <li>Employer name and phone number must be listed, if not, you will be rejected from the process.</li>
-            <li>Once the form is completed, we will look at your application, run a background check, and validate your payment method. This will take about a week.</li>
-            <li>We will then contact you for an interview.</li>
-            <li>If the interview is successful, your new dog will be going home with you.</li>
-        </ul>
 
 <style>
     /* Page Header Styling */
@@ -186,6 +85,8 @@
         font-size: 14px;
         color: #ff4d4f; /* Highlighted red for validation errors */
     }
+
+
 </style>
 
 <div class="register-container">
@@ -330,4 +231,6 @@
         [Required(ErrorMessage = "Payment method.")]
         public string Payment { get; set; } = "";
     }
+    private DogAdoptionWebsiteContext context = default!;
+    public async ValueTask DisposeAsync() => await context.DisposeAsync();
 } 
