@@ -157,6 +157,6 @@
         using var context = DbFactory.CreateDbContext();
         context.AdoptionForm.Add(AdoptionForm);
         await context.SaveChangesAsync();
-        NavigationManager.NavigateTo("/adoptionforms");
+        NavigationManager.NavigateTo("/");
     }
 }
