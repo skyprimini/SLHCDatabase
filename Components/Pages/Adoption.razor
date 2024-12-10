@@ -231,6 +231,6 @@
         [Required(ErrorMessage = "Payment method.")]
         public string Payment { get; set; } = "";
     }
-
+    private DogAdoptionWebsiteContext context = default!;
     public async ValueTask DisposeAsync() => await context.DisposeAsync();
 } 
