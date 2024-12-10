@@ -52,6 +52,26 @@ else
                     <InputText id="employmentstatus" @bind-Value="AdoptionForm.EmploymentStatus" class="form-control" aria-required="true"/>
                     <ValidationMessage For="() => AdoptionForm.EmploymentStatus" class="text-danger" />
                 </div>
+                <div class="mb-3">
+                    <label for="employeephonenumber" class="form-label">EmployeePhoneNumber:</label>
+                    <InputText id="employeephonenumber" @bind-Value="AdoptionForm.EmployeePhoneNumber" class="form-control" aria-required="true"/>
+                    <ValidationMessage For="() => AdoptionForm.EmployeePhoneNumber" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="petname" class="form-label">PetName:</label>
+                    <InputText id="petname" @bind-Value="AdoptionForm.PetName" class="form-control" aria-required="true"/>
+                    <ValidationMessage For="() => AdoptionForm.PetName" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="petbreed" class="form-label">PetBreed:</label>
+                    <InputText id="petbreed" @bind-Value="AdoptionForm.PetBreed" class="form-control" aria-required="true"/>
+                    <ValidationMessage For="() => AdoptionForm.PetBreed" class="text-danger" />
+                </div>
+                <div class="mb-3">
+                    <label for="petage" class="form-label">PetAge:</label>
+                    <InputText id="petage" @bind-Value="AdoptionForm.PetAge" class="form-control" aria-required="true"/>
+                    <ValidationMessage For="() => AdoptionForm.PetAge" class="text-danger" />
+                </div>
                 <button type="submit" class="btn btn-primary">Save</button>
             </EditForm>
         </div>

@@ -25,5 +25,17 @@ namespace DogAdoptionWebsite.Models
 
         [Required(ErrorMessage = "Employment status is required.")]
         public string EmploymentStatus { get; set; } = "";
+
+        [Required(ErrorMessage = "Employee contact is required.")]
+        public string EmployeePhoneNumber { get; set; } = "";
+
+        [Required(ErrorMessage = "Pet name is required.")]
+        public string PetName { get; set; } = "";
+
+        [Required(ErrorMessage = "Pet breed is required.")]
+        public string PetBreed { get; set; } = "";
+
+        [Required(ErrorMessage = "Pet age is required.")]
+        public string PetAge { get; set; } = "";
     }
 }

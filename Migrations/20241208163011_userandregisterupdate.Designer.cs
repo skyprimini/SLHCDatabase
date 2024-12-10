@@ -3,6 +3,7 @@ using DogAdoptionWebsite.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DogAdoptionWebsite.Migrations
 {
     [DbContext(typeof(DogAdoptionWebsiteContext))]
-    partial class DogAdoptionWebsiteContextModelSnapshot : ModelSnapshot
+    [Migration("20241208163011_userandregisterupdate")]
+    partial class userandregisterupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,39 +128,6 @@ namespace DogAdoptionWebsite.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Dog");
-                });
-
-            modelBuilder.Entity("DogAdoptionWebsite.Models.SecureMessage", b =>
-                {
-                    b.Property<int>("SecureMessageId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("SecureMessageId"));
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Message")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Subject")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("SecureMessageId");
-
-                    b.ToTable("SecureMessage");
                 });
 
             modelBuilder.Entity("DogAdoptionWebsite.Models.User", b =>

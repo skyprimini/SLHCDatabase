@@ -24,12 +24,12 @@ else
                 <input type="hidden" name="User.Id" value="@User.Id" />
                 <div class="mb-3">
                     <label for="firstname" class="form-label">FirstName:</label>
-                    <InputText id="firstname" @bind-Value="User.FirstName" class="form-control" aria-required="true"/>
+                    <InputText id="firstname" @bind-Value="User.FirstName" class="form-control" />
                     <ValidationMessage For="() => User.FirstName" class="text-danger" />
                 </div>
                 <div class="mb-3">
                     <label for="lastname" class="form-label">LastName:</label>
-                    <InputText id="lastname" @bind-Value="User.LastName" class="form-control" aria-required="true"/>
+                    <InputText id="lastname" @bind-Value="User.LastName" class="form-control" />
                     <ValidationMessage For="() => User.LastName" class="text-danger" />
                 </div>
                 <div class="mb-3">
@@ -44,23 +44,8 @@ else
                 </div>
                 <div class="mb-3">
                     <label for="role" class="form-label">Role:</label>
-                    <InputText id="role" @bind-Value="User.Role" class="form-control" aria-required="true"/>
+                    <InputText id="role" @bind-Value="User.Role" class="form-control" />
                     <ValidationMessage For="() => User.Role" class="text-danger" />
-                </div>
-                <div class="mb-3">
-                    <label for="age" class="form-label">Age:</label>
-                    <InputText id="age" @bind-Value="User.Age" class="form-control" aria-required="true"/>
-                    <ValidationMessage For="() => User.Age" class="text-danger" />
-                </div>
-                <div class="mb-3">
-                    <label for="currentnumberofpets" class="form-label">CurrentNumberOfPets:</label>
-                    <InputText id="currentnumberofpets" @bind-Value="User.CurrentNumberOfPets" class="form-control" aria-required="true"/>
-                    <ValidationMessage For="() => User.CurrentNumberOfPets" class="text-danger" />
-                </div>
-                <div class="mb-3">
-                    <label for="employmentstatus" class="form-label">EmploymentStatus:</label>
-                    <InputText id="employmentstatus" @bind-Value="User.EmploymentStatus" class="form-control" aria-required="true"/>
-                    <ValidationMessage For="() => User.EmploymentStatus" class="text-danger" />
                 </div>
                 <button type="submit" class="btn btn-primary">Save</button>
             </EditForm>

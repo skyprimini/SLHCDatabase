@@ -14,7 +14,7 @@
 
     /* volunteer Form Container */
     .volunteer-container {
-        display: flex;
+        display: grid;
         justify-content: center;
         align-items: center;
         height: 70vh;
@@ -68,6 +68,7 @@
         }
 
 </style>
+        <!---->
 <div class="volunteer-container"> 
     <div class="volunteer-form">
 
@@ -81,82 +82,16 @@
             <li>Feeding and cleaning up after them</li>
             <li>Spend time with them</li>
             <li>Be sure to fill out the form completely if you are interested in helping your local shelter.</li>
+            <li>To Volunteer please contact our Volunteer Director: 612-704-3168 </li>
         </ul>
 
-        <EditForm Model="volunteerInfo" OnValidSubmit="HandleSubmit">
-            <DataAnnotationsValidator />
-            <ValidationSummary />
-
-                    <div class="form-group">
-                        <InputText id="name" class="form-control" @bind-Value="volunteerInfo.Name" placeholder="Full Name" />
-                        <label for="name">Full Name</label>
-                        <ValidationMessage For="@(() => volunteerInfo.Name)" />
-                    </div>
-
-                    <div class="form-group">
-                        <InputText type="email" id="email" class="form-control" @bind-Value="volunteerInfo.Email" placeholder="Email"/>
-                        <label for="email">Email Address</label>
-                        <ValidationMessage For="@(() => volunteerInfo.Email)" />
-                    </div>
-
-                    <div class="form-group">
-                        <InputText id="availability" class="form-control" @bind-Value="volunteerInfo.Availability" placeholder="Availability"/>
-                        <label for="availability">Availability</label>
-                        <ValidationMessage For="@(() => volunteerInfo.Availability)" />
-                    </div>
-
-                    <div class="form-group">
-                        <InputText id="skills" class="form-control" @bind-Value="volunteerInfo.Skills" placeholder="Skills"/>
-                        <label for="skills">Skills or Experience</label>
-                        <ValidationMessage For="@(() => volunteerInfo.Skills)" />
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </EditForm>
-        </div>
-</div>
-
-
-
-
-
-@if (formSubmitted)
-{
-    <div class="alert alert-success mt-3">
-        Thank you for your interest in volunteering! We will be in touch soon.
+        <!---->
     </div>
-}
-
-
-
-@code {
-   private VolunteerInfo volunteerInfo = new VolunteerInfo();
-   private bool formSubmitted = false;
-
-    private async Task HandleSubmit()
-    {
-        var volunteer = new Volunteer
-            {
-                /*
-                Name = volunteerInfo.Name,
-                Email = volunteerInfo.Email,
-                Availability = volunteerInfo.Availability,
-                Skills = volunteerInfo.Skills*/
-            };
-
-        //DbContext.Volunteers.Add(volunteer);
-        await DbContext.SaveChangesAsync();
-        formSubmitted = true;
-    }
-
-    public class VolunteerInfo
-    {
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Availability { get; set; }
-        public string Skills { get; set; }
-   
-    }
-   
-
-}
+       </div><!---->
+<ul class="centered-section">
+    <p>
+        Don't wanna volunteer?
+        Don't worry about it. We don't judge.....
+    </p>
+    <img src="/images/Dogeyebrowraise.jpg" alt="Logo Image" style="width:20%; height:20%;" />
+</ul>

@@ -4,12 +4,83 @@
 @inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
 @inject NavigationManager NavigationManager
 
-<PageTitle>Create</PageTitle>
+<PageTitle>Adoption Form</PageTitle>
 
-<h1>Create</h1>
+<style>
+    /* Page Header Styling */
+    h1 {
+        font-size: 32px;
+        text-align: center;
+        color: #b5651d; /* Brick color */
+        font-family: 'Georgia', serif;
+        margin-top: 20px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-<h2>AdoptionForm</h2>
+    /* Register Form Container */
+    .register-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+        background-color: #fdf6e3; /* Pastel yellow background */
+        padding: 20px;
+    }
+
+    /* Form Styling */
+    .register-form {
+        width: 100%;
+        max-width: 500px;
+        background-color: #ffffff;
+        border: 2px solid #6b8e23; /* Olive border */
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    .form-floating {
+        margin-bottom: 20px;
+    }
+
+        .form-floating label {
+            color: #333333; /* Dark gray text */
+        }
+
+    .form-control, .form-select {
+        border: 1px solid #6b8e23; /* Olive border */
+        border-radius: 5px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+        .form-control:focus, .form-select:focus {
+            border-color: #b5651d; /* Brick color focus */
+            box-shadow: 0 0 5px rgba(181, 101, 29, 0.5);
+        }
+
+    .btn-primary {
+        background-color: #b5651d; /* Brick color */
+        border-color: #b5651d;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+        .btn-primary:hover {
+            background-color: #6b8e23; /* Olive hover */
+            border-color: #6b8e23;
+        }
+
+    .text-danger {
+        font-size: 14px;
+        color: #ff4d4f; /* Highlighted red for validation errors */
+    }
+</style>
 <hr />
+<div class="register-container">
+    <div class="register-form">
+        <h1>Adoption Form</h1>
 <div class="row">
     <div class="col-md-4">
         <EditForm method="post" Model="AdoptionForm" OnValidSubmit="AddAdoptionForm" FormName="create" Enhance>
@@ -45,9 +116,31 @@
                 <InputText id="employmentstatus" @bind-Value="AdoptionForm.EmploymentStatus" class="form-control" aria-required="true"/> 
                 <ValidationMessage For="() => AdoptionForm.EmploymentStatus" class="text-danger" /> 
             </div>        
+            <div class="mb-3">
+                <label for="employeephonenumber" class="form-label">EmployeePhoneNumber:</label> 
+                <InputText id="employeephonenumber" @bind-Value="AdoptionForm.EmployeePhoneNumber" class="form-control" aria-required="true"/> 
+                <ValidationMessage For="() => AdoptionForm.EmployeePhoneNumber" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="petname" class="form-label">PetName:</label> 
+                <InputText id="petname" @bind-Value="AdoptionForm.PetName" class="form-control" aria-required="true"/> 
+                <ValidationMessage For="() => AdoptionForm.PetName" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="petbreed" class="form-label">PetBreed:</label> 
+                <InputText id="petbreed" @bind-Value="AdoptionForm.PetBreed" class="form-control" aria-required="true"/> 
+                <ValidationMessage For="() => AdoptionForm.PetBreed" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="petage" class="form-label">PetAge:</label> 
+                <InputText id="petage" @bind-Value="AdoptionForm.PetAge" class="form-control" aria-required="true"/> 
+                <ValidationMessage For="() => AdoptionForm.PetAge" class="text-danger" /> 
+            </div>        
             <button type="submit" class="btn btn-primary">Create</button>
         </EditForm>
     </div>
+</div>
+</div>
 </div>
 
 <div>
@@ -64,6 +157,6 @@
         using var context = DbFactory.CreateDbContext();
         context.AdoptionForm.Add(AdoptionForm);
         await context.SaveChangesAsync();
-        NavigationManager.NavigateTo("/adoptionforms");
+        NavigationManager.NavigateTo("/");
     }
 }

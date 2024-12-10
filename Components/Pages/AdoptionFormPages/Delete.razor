@@ -41,6 +41,22 @@
             <dt class="col-sm-2">EmploymentStatus</dt>
             <dd class="col-sm-10">@adoptionform.EmploymentStatus</dd>
         </dl>
+        <dl class="row">
+            <dt class="col-sm-2">EmployeePhoneNumber</dt>
+            <dd class="col-sm-10">@adoptionform.EmployeePhoneNumber</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">PetName</dt>
+            <dd class="col-sm-10">@adoptionform.PetName</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">PetBreed</dt>
+            <dd class="col-sm-10">@adoptionform.PetBreed</dd>
+        </dl>
+        <dl class="row">
+            <dt class="col-sm-2">PetAge</dt>
+            <dd class="col-sm-10">@adoptionform.PetAge</dd>
+        </dl>
         <EditForm method="post" Model="adoptionform" OnValidSubmit="DeleteAdoptionForm" FormName="delete" Enhance>
             <button type="submit" class="btn btn-danger" disabled="@(adoptionform is null)">Delete</button> |
             <a href="/adoptionforms">Back to List</a>

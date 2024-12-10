@@ -1,0 +1,59 @@
+﻿@page "/volunteers/create"
+@using Microsoft.EntityFrameworkCore
+@using DogAdoptionWebsite.Models
+@inject IDbContextFactory<DogAdoptionWebsite.Data.DogAdoptionWebsiteContext> DbFactory
+@inject NavigationManager NavigationManager
+
+<PageTitle>Create</PageTitle>
+
+<h1>Create</h1>
+
+<h2>Volunteer</h2>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <EditForm method="post" Model="Volunteer" OnValidSubmit="AddVolunteer" FormName="create" Enhance>
+            <DataAnnotationsValidator />
+            <ValidationSummary class="text-danger" role="alert"/>
+            <div class="mb-3">
+                <label for="name" class="form-label">Name:</label> 
+                <InputText id="name" @bind-Value="Volunteer.Name" class="form-control" /> 
+                <ValidationMessage For="() => Volunteer.Name" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="email" class="form-label">Email:</label> 
+                <InputText id="email" @bind-Value="Volunteer.Email" class="form-control" /> 
+                <ValidationMessage For="() => Volunteer.Email" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="availability" class="form-label">Availability:</label> 
+                <InputText id="availability" @bind-Value="Volunteer.Availability" class="form-control" /> 
+                <ValidationMessage For="() => Volunteer.Availability" class="text-danger" /> 
+            </div>        
+            <div class="mb-3">
+                <label for="skills" class="form-label">Skills:</label> 
+                <InputText id="skills" @bind-Value="Volunteer.Skills" class="form-control" /> 
+                <ValidationMessage For="() => Volunteer.Skills" class="text-danger" /> 
+            </div>        
+            <button type="submit" class="btn btn-primary">Create</button>
+        </EditForm>
+    </div>
+</div>
+
+<div>
+    <a href="/volunteers">Back to List</a>
+</div>
+
+@code {
+    [SupplyParameterFromForm]
+    private Volunteer Volunteer { get; set; } = new();
+
+    // To protect from overposting attacks, see https://learn.microsoft.com/aspnet/core/blazor/forms/#mitigate-overposting-attacks.
+    private async Task AddVolunteer()
+    {
+        using var context = DbFactory.CreateDbContext();
+        context.Volunteer.Add(Volunteer);
+        await context.SaveChangesAsync();
+        NavigationManager.NavigateTo("/volunteers");
+    }
+}

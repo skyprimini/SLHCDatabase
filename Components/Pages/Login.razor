@@ -133,18 +133,25 @@
             !string.IsNullOrEmpty(Input.Role))
         {
             // Redirect based on role
-            if (Input.Role == "Admin")
+            //navigates to a hardcoded page.
+            if (Input.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
             {
                 NavigationManager.NavigateTo("/admin");
             }
-            else if (Input.Role == "User")
+            else if (Input.Role.Equals("User", StringComparison.OrdinalIgnoreCase))
             {
-                NavigationManager.NavigateTo("/users");
+                NavigationManager.NavigateTo("/user");
+            }
+            else
+            {
+                // Optional: Handle unexpected roles
+                Console.WriteLine("Unknown role selected.");
             }
         }
         else
         {
-            // Handle validation errors
+            // Optional: Display validation errors to the user
+            Console.WriteLine("Validation errors occurred. Ensure all fields are filled.");
         }
     }
 
